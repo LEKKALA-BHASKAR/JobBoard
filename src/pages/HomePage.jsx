@@ -592,13 +592,16 @@ function TrustPill({ icon, children }) {
 
 function PersonaCard({ to, variant, eyebrow, title, copy }) {
   const isInk = variant === 'ink';
+  // Both variants are fixed-mode "islands": the cream card is always white bg
+  // with dark ink text, the ink card is always dark bg with cream text. Neither
+  // should flip with the outer theme, so text colors are hard-coded here.
   return (
     <Link
       to={to}
       className={`group relative block rounded-[var(--radius-lg)] p-7 transition-transform duration-300 hover:-translate-y-1 sm:p-8 ${
         isInk
-          ? 'bg-[color:var(--color-ink)] text-white shadow-[var(--shadow-elev-3)]'
-          : 'bg-white text-[color:var(--color-text)]'
+          ? 'bg-[color:var(--color-ink)] shadow-[var(--shadow-elev-3)]'
+          : 'bg-white'
       }`}
       style={
         isInk
@@ -612,7 +615,7 @@ function PersonaCard({ to, variant, eyebrow, title, copy }) {
       <div className="flex items-start justify-between gap-4">
         <p
           className={`text-[11.5px] font-medium uppercase tracking-[0.18em] ${
-            isInk ? 'text-white/55' : 'text-[color:var(--color-text-subtle)]'
+            isInk ? 'text-white/55' : 'text-[#7a6f60]'
           }`}
         >
           {eyebrow}
@@ -620,7 +623,7 @@ function PersonaCard({ to, variant, eyebrow, title, copy }) {
         <ArrowUpRight
           size={22}
           className={`transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${
-            isInk ? 'text-white' : 'text-[color:var(--color-text)]'
+            isInk ? 'text-white' : 'text-[#17130f]'
           }`}
           aria-hidden="true"
         />
@@ -628,7 +631,7 @@ function PersonaCard({ to, variant, eyebrow, title, copy }) {
 
       <h3
         className={`font-display mt-5 text-[26px] font-semibold leading-[1.1] tracking-[-0.01em] sm:text-[30px] ${
-          isInk ? 'text-white' : 'text-[color:var(--color-text)]'
+          isInk ? 'text-white' : 'text-[#17130f]'
         }`}
       >
         {title}
@@ -636,7 +639,7 @@ function PersonaCard({ to, variant, eyebrow, title, copy }) {
 
       <p
         className={`mt-3 max-w-sm text-[14px] leading-relaxed ${
-          isInk ? 'text-white/70' : 'text-[color:var(--color-text-muted)]'
+          isInk ? 'text-white/70' : 'text-[#4a4137]'
         }`}
       >
         {copy}

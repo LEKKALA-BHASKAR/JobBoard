@@ -93,7 +93,10 @@
   }
 }
 
-/* Dark theme kept as an option — warm charcoal to complement cream. */
+/* Dark theme kept as an option — warm charcoal to complement cream.
+ * Note: --color-ink stays fixed at deep dark in both themes. It's a semantic
+ * "always dark island" token used by the ink persona card, CTA, and marquee
+ * ticker — those components are inverse-mode by design and must not flip. */
 :where(.dark) {
   --color-canvas: #17130f;
   --color-surface: #1e1914;
@@ -104,9 +107,6 @@
   --color-text: #f4ede1;
   --color-text-muted: #b8ac9a;
   --color-text-subtle: #8a7f70;
-
-  --color-ink: #f4ede1;
-  --color-ink-soft: #eee5d5;
 
   --color-accent: #e08661;
   --color-accent-hover: #eba07f;
