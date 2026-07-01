@@ -32,14 +32,14 @@ export default function EditJobPage() {
     <>
       <SEO title={`Edit ${job.title}`} description="Update your job listing." />
       <div className="mx-auto max-w-4xl px-4 pb-24 pt-10 sm:px-6">
-        <header className="mb-8">
-          <span className="text-[12.5px] font-semibold uppercase tracking-wider text-[color:var(--color-accent-text)]">
+        <header className="mb-10">
+          <span className="text-[11.5px] font-medium uppercase tracking-[0.24em] text-[color:var(--color-accent)]">
             Edit listing
           </span>
-          <h1 className="mt-1 text-[28px] font-semibold tracking-[-0.01em] text-[color:var(--color-text)] sm:text-[32px]">
+          <h1 className="font-display mt-2 text-[40px] font-medium leading-[1.02] tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[48px]">
             {job.title}
           </h1>
-          <p className="max-w-xl text-[14px] text-[color:var(--color-text-muted)]">
+          <p className="mt-3 max-w-xl text-[14px] leading-relaxed text-[color:var(--color-text-muted)]">
             Update any details below. Changes are saved locally and take effect immediately.
           </p>
         </header>

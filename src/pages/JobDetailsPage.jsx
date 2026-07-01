@@ -127,7 +127,7 @@ export default function JobDetailsPage() {
                   >
                     {job.companyName}
                   </Link>
-                  <h1 className="mt-1 text-[24px] font-semibold tracking-[-0.01em] text-[color:var(--color-text)] sm:text-[28px]">
+                  <h1 className="font-display mt-2 text-[32px] font-medium leading-[1.05] tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[40px]">
                     {job.title}
                   </h1>
                 </div>

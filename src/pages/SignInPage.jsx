@@ -55,10 +55,10 @@ export default function SignInPage() {
       <AuthShell>
         <div className="mb-7 flex flex-col items-center gap-2 text-center">
           <Logo />
-          <h1 className="mt-2 text-[24px] font-semibold tracking-[-0.01em] text-[color:var(--color-text)]">
-            Welcome back
+          <h1 className="font-display mt-3 text-[36px] font-medium leading-[1.05] tracking-[-0.02em] text-[color:var(--color-text)]">
+            Welcome <em className="italic">back.</em>
           </h1>
-          <p className="text-[13.5px] text-[color:var(--color-text-muted)]">
+          <p className="mt-1 text-[13.5px] text-[color:var(--color-text-muted)]">
             Sign in to bookmark roles, post jobs, and manage your account.
           </p>
         </div>

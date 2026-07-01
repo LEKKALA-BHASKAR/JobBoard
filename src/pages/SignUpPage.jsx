@@ -71,11 +71,11 @@ export default function SignUpPage() {
         <div className="relative w-full max-w-md rounded-[var(--radius-xl)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-7 shadow-[var(--shadow-elev-2)]">
           <div className="mb-7 flex flex-col items-center gap-2 text-center">
             <Logo />
-            <h1 className="mt-2 text-[24px] font-semibold tracking-[-0.01em] text-[color:var(--color-text)]">
-              Create your account
+            <h1 className="font-display mt-3 text-[36px] font-medium leading-[1.05] tracking-[-0.02em] text-[color:var(--color-text)]">
+              Create your <em className="italic">account.</em>
             </h1>
-            <p className="text-[13.5px] text-[color:var(--color-text-muted)]">
-              Free — takes about 20 seconds.
+            <p className="mt-1 text-[13.5px] text-[color:var(--color-text-muted)]">
+              Free forever — takes about 20 seconds.
             </p>
           </div>
 

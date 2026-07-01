@@ -1,5 +1,4 @@
-import { useMemo, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
@@ -8,16 +7,10 @@ import {
   Heart,
   Lock,
   Phone,
-  Search,
   Shield,
   UserCheck,
 } from 'lucide-react';
-import { useJobs } from '../context/JobsContext';
-import { computeStats, featuredJobs } from '../utils/jobsFilter';
-import { JobCard } from '../components/JobCard';
-import { JobCardSkeleton } from '../components/Skeleton';
 import { SEO } from '../components/SEO';
-import { Button } from '../components/Button';
 
 /* ------------------------------ Static data ------------------------------ */
 
@@ -119,19 +112,6 @@ const TESTIMONIALS = [
 /* --------------------------------- Page --------------------------------- */
 
 export default function HomePage() {
-  const { jobs, loading } = useJobs();
-  const navigate = useNavigate();
-  const [query, setQuery] = useState('');
-
-  const stats = useMemo(() => computeStats(jobs), [jobs]);
-  const featured = useMemo(() => featuredJobs(jobs, 3), [jobs]);
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const q = query.trim();
-    navigate(q ? `/jobs?q=${encodeURIComponent(q)}` : '/jobs');
-  };
-
   return (
     <>
       <SEO
@@ -467,10 +447,16 @@ export default function HomePage() {
       {/* ------------------------------ Big stats ---------------------------- */}
       <section className="mx-auto max-w-6xl px-4 pt-24 sm:px-6">
         <div className="grid grid-cols-2 gap-y-10 md:grid-cols-4">
-          {STATS_BIG.map((s) => (
+          {STATS_BIG.map((s, i) => (
             <div key={s.label} className="flex flex-col items-center text-center">
-              <div className="font-display text-[64px] font-medium leading-none tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[80px]">
+              <div className="font-display relative text-[64px] font-medium leading-none tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[80px]">
                 {s.value}
+                {i === 0 && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute -right-3 top-1 h-2 w-2 rounded-full bg-[color:var(--color-accent)] sm:-right-4"
+                  />
+                )}
               </div>
               <div className="mt-3 max-w-[200px] text-[12.5px] leading-tight text-[color:var(--color-text-muted)]">
                 {s.label}
@@ -486,35 +472,12 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* --------------------------- Featured jobs ---------------------------- */}
-      <section className="mx-auto max-w-6xl px-4 pt-24 sm:px-6">
-        <div className="mb-8 flex items-end justify-between gap-4">
-          <div>
-            <p className="text-[11.5px] font-medium uppercase tracking-[0.24em] text-[color:var(--color-accent)]">
-              Open this week
-            </p>
-            <h2 className="font-display mt-3 text-[32px] font-medium tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[40px]">
-              Roles worth reading twice.
-            </h2>
-          </div>
-          <Link
-            to="/jobs?sort=salary-desc"
-            className="inline-flex items-center gap-1 text-[13px] font-medium text-[color:var(--color-accent-text)] hover:underline"
-          >
-            See all
-            <ArrowRight size={12} aria-hidden="true" />
-          </Link>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {loading
-            ? Array.from({ length: 3 }).map((_, i) => <JobCardSkeleton key={i} />)
-            : featured.map((job) => <JobCard key={job.id} job={job} />)}
-        </div>
-      </section>
-
       {/* --------------------------- Testimonials ----------------------------- */}
-      <section className="mx-auto max-w-6xl px-4 pt-24 sm:px-6">
-        <h2 className="font-display text-center text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[52px]">
+      <section className="mx-auto max-w-6xl px-4 pt-24 text-center sm:px-6">
+        <p className="text-[11.5px] font-medium uppercase tracking-[0.24em] text-[color:var(--color-accent)]">
+          Word travels
+        </p>
+        <h2 className="font-display mt-4 text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[52px]">
           What teams say after the{' '}
           <em className="italic">first hire.</em>
         </h2>
@@ -544,42 +507,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ----------------------------- Utility search ------------------------- */}
-      <section className="mx-auto max-w-3xl px-4 pt-24 text-center sm:px-6">
-        <p className="text-[11.5px] font-medium uppercase tracking-[0.24em] text-[color:var(--color-accent)]">
-          Or just start looking
-        </p>
-        <h2 className="font-display mt-3 text-[32px] font-medium tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[42px]">
-          What do you want to build?
-        </h2>
-        <form
-          onSubmit={onSubmit}
-          className="mx-auto mt-8 flex w-full max-w-xl flex-col gap-2 sm:flex-row sm:items-center sm:gap-0"
-        >
-          <label htmlFor="hero-search" className="sr-only">
-            Search jobs
-          </label>
-          <div className="flex h-12 flex-1 items-center gap-2 rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 focus-within:border-[color:var(--color-accent)] sm:rounded-r-none">
-            <Search size={16} aria-hidden="true" className="text-[color:var(--color-text-subtle)]" />
-            <input
-              id="hero-search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search by title, company, or skill…"
-              className="w-full border-0 bg-transparent text-[14.5px] text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-subtle)] focus:outline-none"
-            />
-          </div>
-          <Button
-            type="submit"
-            size="lg"
-            className="h-12 rounded-full sm:rounded-l-none"
-            rightIcon={<ArrowRight size={14} aria-hidden="true" />}
-          >
-            Search {stats.totalJobs.toLocaleString()} roles
-          </Button>
-        </form>
-      </section>
-
       {/* ------------------------------ Dark CTA ------------------------------ */}
       <section className="mx-auto max-w-6xl px-4 pb-28 pt-20 sm:px-6">
         <div className="relative overflow-hidden rounded-[var(--radius-xl)] bg-[color:var(--color-ink)] p-10 text-center sm:p-16">
@@ -591,13 +518,13 @@ export default function HomePage() {
                 'radial-gradient(60% 80% at 20% 10%, rgba(224, 134, 97, 0.20), transparent 70%), radial-gradient(50% 70% at 90% 90%, rgba(224, 134, 97, 0.14), transparent 70%)',
             }}
           />
+          <span
+            aria-hidden="true"
+            className="absolute left-6 top-6 text-[color:var(--color-accent)] sm:left-10 sm:top-10"
+          >
+            ✦
+          </span>
           <div className="relative">
-            <span
-              aria-hidden="true"
-              className="mb-4 inline-block text-[color:var(--color-accent)]"
-            >
-              ✦
-            </span>
             <h2 className="font-display text-[52px] font-medium leading-[1.02] tracking-[-0.02em] text-white sm:text-[80px]">
               Ready when{' '}
               <em className="italic text-[color:var(--color-accent)]">you</em>{' '}

@@ -58,11 +58,11 @@ export default function AdminJobsPage() {
     <div className="flex flex-col gap-6">
       <header className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-[12px] font-medium uppercase tracking-wider text-[color:var(--color-text-subtle)]">
+          <p className="text-[11.5px] font-medium uppercase tracking-[0.24em] text-[color:var(--color-accent)]">
             Jobs
           </p>
-          <h1 className="mt-1 text-[24px] font-semibold tracking-[-0.01em] text-[color:var(--color-text)]">
-            Manage postings
+          <h1 className="font-display mt-3 text-[36px] font-medium leading-[1.02] tracking-[-0.02em] text-[color:var(--color-text)]">
+            Manage <em className="italic">postings.</em>
           </h1>
           <p className="mt-1 text-[13px] text-[color:var(--color-text-muted)]">
             {jobs.length} total · {jobs.filter((j) => j.featured).length} featured

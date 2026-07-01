@@ -60,7 +60,7 @@ export function NotFoundInline({ title = 'Page not found', description }) {
   return (
     <div className="mx-auto flex max-w-md flex-col items-center gap-4 px-4 py-24 text-center sm:px-6">
       <LostSvg />
-      <h1 className="text-[22px] font-semibold tracking-[-0.01em] text-[color:var(--color-text)]">
+      <h1 className="font-display text-[36px] font-medium leading-[1.05] tracking-[-0.02em] text-[color:var(--color-text)]">
         {title}
       </h1>
       <p className="text-[14px] leading-relaxed text-[color:var(--color-text-muted)]">

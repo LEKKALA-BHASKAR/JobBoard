@@ -37,11 +37,14 @@ export default function AdminDashboardPage() {
   return (
     <div className="flex flex-col gap-8">
       <header>
-        <p className="text-[12px] font-medium uppercase tracking-wider text-[color:var(--color-text-subtle)]">
+        <p className="text-[11.5px] font-medium uppercase tracking-[0.24em] text-[color:var(--color-accent)]">
           Dashboard
         </p>
-        <h1 className="mt-1 text-[26px] font-semibold tracking-[-0.01em] text-[color:var(--color-text)]">
-          Welcome back, {currentUser?.name?.split(' ')[0] ?? 'Admin'}
+        <h1 className="font-display mt-3 text-[42px] font-medium leading-[1.02] tracking-[-0.02em] text-[color:var(--color-text)]">
+          Welcome back,{' '}
+          <em className="italic">
+            {currentUser?.name?.split(' ')[0] ?? 'Admin'}.
+          </em>
         </h1>
         <p className="mt-1 text-[13.5px] text-[color:var(--color-text-muted)]">
           A quick snapshot of the platform. Everything here reads from your local mock data.
