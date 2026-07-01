@@ -6,7 +6,7 @@ across 14 real companies), URL-synced filters, per-page SEO, dark mode,
 route-based code splitting, and a swap-in-ready service layer so a real
 backend can replace `localStorage` in one file.
 
-![Postline hero screenshot](docs/screenshots/home.png)
+
 
 ## Feature list
 
