@@ -6,6 +6,7 @@ import { router } from './router';
 import { ThemeProvider } from './context/ThemeContext';
 import { JobsProvider } from './context/JobsContext';
 import { ToastProvider } from './context/ToastContext';
+import { AuthProvider } from './context/AuthContext';
 import './index.css';
 
 createRoot(document.getElementById('root')).render(
@@ -13,9 +14,11 @@ createRoot(document.getElementById('root')).render(
     <HelmetProvider>
       <ThemeProvider>
         <ToastProvider>
-          <JobsProvider>
-            <RouterProvider router={router} />
-          </JobsProvider>
+          <AuthProvider>
+            <JobsProvider>
+              <RouterProvider router={router} />
+            </JobsProvider>
+          </AuthProvider>
         </ToastProvider>
       </ThemeProvider>
     </HelmetProvider>

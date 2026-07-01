@@ -51,7 +51,7 @@ export default function HomePage() {
           className="pointer-events-none absolute inset-x-0 top-0 h-[420px] opacity-[0.55]"
           style={{
             background:
-              'radial-gradient(60% 60% at 50% 0%, rgba(99, 102, 241, 0.18), transparent 70%), radial-gradient(40% 40% at 20% 20%, rgba(236, 72, 153, 0.10), transparent 70%)',
+              'radial-gradient(60% 60% at 50% 0%, rgba(249, 115, 22, 0.22), transparent 70%), radial-gradient(40% 40% at 20% 20%, rgba(37, 99, 235, 0.14), transparent 70%)',
           }}
         />
         <div className="relative mx-auto grid max-w-6xl gap-14 px-4 pb-16 pt-14 sm:px-6 sm:pt-20">
@@ -192,7 +192,7 @@ export default function HomePage() {
             className="pointer-events-none absolute inset-0"
             style={{
               background:
-                'radial-gradient(50% 60% at 90% 0%, rgba(99, 102, 241, 0.10), transparent 70%)',
+                'radial-gradient(50% 60% at 90% 0%, rgba(249, 115, 22, 0.14), transparent 70%), radial-gradient(40% 60% at 10% 100%, rgba(37, 99, 235, 0.10), transparent 70%)',
             }}
           />
           <div className="relative grid gap-6 md:grid-cols-[1.5fr_auto] md:items-center">

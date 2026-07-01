@@ -77,20 +77,27 @@
 
 /* Dark theme overrides */
 :where(.dark) {
-  --color-canvas: #09090b;
-  --color-surface: #0c0c0f;
-  --color-surface-2: #111114;
-  --color-surface-3: #18181b;
-  --color-border: #24242a;
-  --color-border-strong: #3f3f46;
+  --color-canvas: #0b0b0f;
+  --color-surface: #111116;
+  --color-surface-2: #16161c;
+  --color-surface-3: #1c1c23;
+  --color-border: #26262d;
+  --color-border-strong: #3d3d47;
   --color-text: #fafafa;
-  --color-text-muted: #a1a1aa;
-  --color-text-subtle: #71717a;
+  --color-text-muted: #b4b4bc;
+  --color-text-subtle: #7c7c86;
 
-  --color-accent: #818cf8;
-  --color-accent-hover: #a5b4fc;
-  --color-accent-soft: rgba(129, 140, 248, 0.12);
-  --color-accent-text: #c7d2fe;
+  /* Primary accent — orange (tuned for dark bg) */
+  --color-accent: #fb923c;
+  --color-accent-hover: #fdba74;
+  --color-accent-soft: rgba(249, 115, 22, 0.14);
+  --color-accent-text: #fdba74;
+
+  /* Secondary — blue (tuned for dark bg) */
+  --color-secondary: #60a5fa;
+  --color-secondary-hover: #93c5fd;
+  --color-secondary-soft: rgba(96, 165, 250, 0.14);
+  --color-secondary-text: #93c5fd;
 
   --color-success: #34d399;
   --color-success-soft: rgba(52, 211, 153, 0.12);
