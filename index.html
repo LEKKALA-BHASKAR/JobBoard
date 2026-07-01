@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Postline is a curated job board for engineers, designers, product managers, and operators — real listings from real teams, no clutter." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Postline" />
+    <meta property="og:title" content="Postline — Find your next role" />
+    <meta property="og:description" content="A curated job board for engineers, designers, product, sales, marketing, and data teams." />
+
+    <link rel="preconnect" href="https://rsms.me" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <script>
+      // Apply theme before first paint to prevent flash-of-wrong-theme.
+      (function () {
+        try {
+          var saved = localStorage.getItem('postline.theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var resolved = saved === 'dark' || saved === 'light' ? saved : (prefersDark ? 'dark' : 'light');
+          document.documentElement.classList.toggle('dark', resolved === 'dark');
+          document.documentElement.style.colorScheme = resolved;
+        } catch (_) {}
+      })();
+    </script>
+
+    <title>Postline — Find your next role</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
