@@ -14,16 +14,16 @@
     'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
 
-  /* Light / editorial — clean white the default */
-  --color-canvas: #ffffff;
+  /* Light / editorial — warm cream canvas, white cards float on top */
+  --color-canvas: #f4ede1;
   --color-surface: #ffffff;
-  --color-surface-2: #f7f5f1;
-  --color-surface-3: #efece5;
-  --color-border: #ebe6dc;
-  --color-border-strong: #cfc7b6;
+  --color-surface-2: #eee5d5;
+  --color-surface-3: #e6dcc8;
+  --color-border: #e2d7c1;
+  --color-border-strong: #c9b995;
   --color-text: #1a1613;
   --color-text-muted: #4a4137;
-  --color-text-subtle: #857c6f;
+  --color-text-subtle: #7a6f60;
 
   /* Ink — the "black" persona card */
   --color-ink: #17130f;

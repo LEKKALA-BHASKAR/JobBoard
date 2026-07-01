@@ -3,32 +3,26 @@ import { STORAGE_KEYS } from '../constants/storage';
 
 const ThemeContext = createContext(null);
 
-function getInitial() {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEYS.theme);
-    if (saved === 'light' || saved === 'dark') return saved;
-  } catch {}
-  // Editorial cream is the default. Users can flip via toggle.
-  return 'light';
-}
-
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(getInitial);
+  // The editorial cream design is single-theme. Keep the provider around so
+  // consumers (Navbar, etc.) don't crash, but hard-pin to 'light' and no-op
+  // the setter/toggle.
+  const [theme] = useState('light');
 
   useEffect(() => {
     const root = document.documentElement;
-    root.classList.toggle('dark', theme === 'dark');
-    root.style.colorScheme = theme;
+    root.classList.remove('dark');
+    root.style.colorScheme = 'light';
     try {
-      localStorage.setItem(STORAGE_KEYS.theme, theme);
+      localStorage.setItem(STORAGE_KEYS.theme, 'light');
     } catch {}
-  }, [theme]);
-
-  const toggle = useCallback(() => {
-    setTheme((t) => (t === 'dark' ? 'light' : 'dark'));
   }, []);
 
-  const value = useMemo(() => ({ theme, setTheme, toggle }), [theme, toggle]);
+  const noop = useCallback(() => {}, []);
+  const value = useMemo(
+    () => ({ theme, setTheme: noop, toggle: noop }),
+    [theme, noop],
+  );
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
 

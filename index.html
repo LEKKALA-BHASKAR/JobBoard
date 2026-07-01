@@ -20,16 +20,15 @@
     />
 
     <script>
-      // Apply theme before first paint. Editorial light is the default look.
+      // Editorial cream light theme is the only supported look. Force it on
+      // every load and clear any stale saved value so previous sessions that
+      // stored 'dark' during earlier design iterations no longer stick.
       (function () {
         try {
-          var saved = localStorage.getItem('postline.theme');
-          var resolved = saved === 'dark' || saved === 'light' ? saved : 'light';
-          document.documentElement.classList.toggle('dark', resolved === 'dark');
-          document.documentElement.style.colorScheme = resolved;
-        } catch (_) {
-          document.documentElement.style.colorScheme = 'light';
-        }
+          localStorage.setItem('postline.theme', 'light');
+        } catch (_) {}
+        document.documentElement.classList.remove('dark');
+        document.documentElement.style.colorScheme = 'light';
       })();
     </script>
 
