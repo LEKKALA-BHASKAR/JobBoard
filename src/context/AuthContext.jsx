@@ -68,6 +68,12 @@ function readCurrentId() {
   }
 }
 
+function stripPassword(user) {
+  const out = { ...user };
+  delete out.password;
+  return out;
+}
+
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
@@ -87,9 +93,7 @@ export function AuthProvider({ children }) {
     if (!currentUserId) return null;
     const u = users.find((x) => x.id === currentUserId);
     if (!u || u.disabled) return null;
-    // Never expose password in the current user surface.
-    const { password: _pw, ...rest } = u;
-    return rest;
+    return stripPassword(u);
   }, [users, currentUserId]);
 
   const signIn = useCallback(
@@ -148,7 +152,7 @@ export function AuthProvider({ children }) {
 
   const value = useMemo(
     () => ({
-      users: users.map(({ password: _pw, ...rest }) => rest),
+      users: users.map(stripPassword),
       currentUser,
       isAuthed: Boolean(currentUser),
       isAdmin: currentUser?.role === 'admin',

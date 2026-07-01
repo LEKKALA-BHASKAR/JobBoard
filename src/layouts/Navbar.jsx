@@ -70,7 +70,7 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[color:var(--color-border)] bg-[color:var(--color-canvas)]/85 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-[color:var(--color-border)] bg-[color:var(--color-canvas)]/80 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:px-6">
         <Link to="/" className="flex items-center gap-2" aria-label="Postline home">
           <Logo />
@@ -115,7 +115,7 @@ export function Navbar() {
           <ThemeToggle />
           <Link
             to="/post-job"
-            className="hidden h-9 items-center gap-2 rounded-[var(--radius)] bg-[color:var(--color-accent)] px-3 text-[13.5px] font-medium text-white transition hover:bg-[color:var(--color-accent-hover)] sm:inline-flex"
+            className="hidden h-9 items-center gap-2 rounded-[var(--radius)] bg-[color:var(--color-accent)] px-3 text-[13.5px] font-medium text-white shadow-[var(--shadow-elev-1)] ring-1 ring-inset ring-white/10 transition hover:bg-[color:var(--color-accent-hover)] sm:inline-flex"
           >
             <Plus size={14} aria-hidden="true" />
             Post a job

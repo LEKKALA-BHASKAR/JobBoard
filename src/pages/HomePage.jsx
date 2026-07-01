@@ -48,29 +48,43 @@ export default function HomePage() {
       <section className="relative overflow-hidden border-b border-[color:var(--color-border)] bg-[color:var(--color-canvas)]">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-[420px] opacity-[0.55]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[520px] opacity-90"
           style={{
             background:
-              'radial-gradient(60% 60% at 50% 0%, rgba(249, 115, 22, 0.22), transparent 70%), radial-gradient(40% 40% at 20% 20%, rgba(37, 99, 235, 0.14), transparent 70%)',
+              'radial-gradient(60% 55% at 50% 0%, rgba(224, 134, 97, 0.22), transparent 70%), radial-gradient(35% 45% at 15% 20%, rgba(224, 134, 97, 0.10), transparent 70%), radial-gradient(30% 40% at 85% 25%, rgba(122, 157, 224, 0.08), transparent 70%)',
           }}
         />
-        <div className="relative mx-auto grid max-w-6xl gap-14 px-4 pb-16 pt-14 sm:px-6 sm:pt-20">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-full opacity-[0.06]"
+          style={{
+            backgroundImage:
+              'linear-gradient(to right, var(--color-text) 1px, transparent 1px), linear-gradient(to bottom, var(--color-text) 1px, transparent 1px)',
+            backgroundSize: '56px 56px',
+            maskImage:
+              'radial-gradient(60% 50% at 50% 0%, black, transparent 75%)',
+          }}
+        />
+        <div className="relative mx-auto grid max-w-6xl gap-14 px-4 pb-16 pt-16 sm:px-6 sm:pt-24">
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="mx-auto max-w-3xl text-center"
           >
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-2.5 py-1 text-[12px] font-medium text-[color:var(--color-text-muted)]">
-              <Sparkles size={12} aria-hidden="true" className="text-[color:var(--color-accent)]" />
-              {stats.totalJobs} open roles this week
+            <span className="prompt-prefix inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-3 py-1 text-[11.5px] font-medium uppercase tracking-[0.14em] text-[color:var(--color-text-muted)]">
+              <Sparkles size={11} aria-hidden="true" className="text-[color:var(--color-accent)]" />
+              {stats.totalJobs} open roles · week 27
             </span>
-            <h1 className="mt-5 text-[38px] font-semibold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[52px]">
-              The job board built for
+            <h1 className="mt-6 text-[40px] font-semibold leading-[1.02] tracking-[-0.03em] text-[color:var(--color-text)] sm:text-[60px]">
+              A job board for
               <br />
-              <span className="text-[color:var(--color-text-muted)]">people who care about craft.</span>
+              <span className="font-display text-[color:var(--color-accent)]">
+                people who ship
+              </span>
+              <span className="caret" aria-hidden="true"></span>
             </h1>
-            <p className="mx-auto mt-5 max-w-xl text-[15.5px] leading-relaxed text-[color:var(--color-text-muted)]">
+            <p className="mx-auto mt-6 max-w-xl text-[14.5px] leading-relaxed text-[color:var(--color-text-muted)]">
               Curated roles from teams like Linear, Vercel, Figma, and Stripe. No spam,
               no re-listings, no lorem ipsum — just real jobs from real teams.
             </p>
@@ -102,13 +116,14 @@ export default function HomePage() {
               </Button>
             </form>
 
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[12.5px] text-[color:var(--color-text-subtle)]">
-              <span>Popular:</span>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-[12px] text-[color:var(--color-text-subtle)]">
+              <span className="uppercase tracking-[0.14em]">Popular</span>
+              <span aria-hidden="true">·</span>
               {['React', 'Design systems', 'Rust', 'Product Manager', 'Growth'].map((k) => (
                 <Link
                   key={k}
                   to={`/jobs?q=${encodeURIComponent(k)}`}
-                  className="rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-2 py-0.5 transition-colors hover:text-[color:var(--color-text)]"
+                  className="rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-2.5 py-1 transition-colors hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent-text)]"
                 >
                   {k}
                 </Link>
@@ -192,7 +207,7 @@ export default function HomePage() {
             className="pointer-events-none absolute inset-0"
             style={{
               background:
-                'radial-gradient(50% 60% at 90% 0%, rgba(249, 115, 22, 0.14), transparent 70%), radial-gradient(40% 60% at 10% 100%, rgba(37, 99, 235, 0.10), transparent 70%)',
+                'radial-gradient(50% 60% at 90% 0%, rgba(224, 134, 97, 0.18), transparent 70%), radial-gradient(40% 60% at 10% 100%, rgba(122, 157, 224, 0.10), transparent 70%)',
             }}
           />
           <div className="relative grid gap-6 md:grid-cols-[1.5fr_auto] md:items-center">
@@ -229,11 +244,11 @@ export default function HomePage() {
 
 function Stat({ label, value }) {
   return (
-    <div className="flex flex-col items-center justify-center py-4">
-      <div className="text-[22px] font-semibold tracking-tight text-[color:var(--color-text)]">
+    <div className="flex flex-col items-center justify-center py-5">
+      <div className="text-[26px] font-semibold tracking-tight text-[color:var(--color-text)] tabular-nums">
         {value}
       </div>
-      <div className="text-[12px] uppercase tracking-wider text-[color:var(--color-text-subtle)]">
+      <div className="mt-0.5 text-[10.5px] uppercase tracking-[0.16em] text-[color:var(--color-text-subtle)]">
         {label}
       </div>
     </div>
@@ -245,8 +260,8 @@ function Section({ title, subtitle, rightSlot, children }) {
     <section className="mx-auto max-w-6xl px-4 pt-14 sm:px-6 sm:pt-20">
       <div className="mb-6 flex items-end justify-between gap-4">
         <div>
-          <h2 className="text-[22px] font-semibold tracking-[-0.01em] text-[color:var(--color-text)] sm:text-[26px]">
-            {title}
+          <h2 className="text-[22px] font-semibold tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[28px]">
+            <span className="text-[color:var(--color-accent)]">›</span> {title}
           </h2>
           {subtitle && (
             <p className="mt-1 max-w-xl text-[13.5px] leading-relaxed text-[color:var(--color-text-muted)]">

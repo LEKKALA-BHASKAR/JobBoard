@@ -43,7 +43,7 @@ export default function SignInPage() {
     }
   };
 
-  const useDemo = (acct) => {
+  const fillDemo = (acct) => {
     setEmail(acct.email);
     setPassword(acct.password);
     setError(null);
@@ -135,7 +135,7 @@ export default function SignInPage() {
               <button
                 key={a.email}
                 type="button"
-                onClick={() => useDemo(a)}
+                onClick={() => fillDemo(a)}
                 className="rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-2.5 py-1 text-[12px] text-[color:var(--color-text-muted)] transition hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-text)]"
               >
                 Use {a.label}: {a.email}
@@ -156,7 +156,7 @@ function AuthShell({ children }) {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(50% 50% at 20% 10%, rgba(249, 115, 22, 0.14), transparent 70%), radial-gradient(40% 50% at 90% 90%, rgba(37, 99, 235, 0.10), transparent 70%)',
+            'radial-gradient(50% 50% at 20% 10%, rgba(224, 134, 97, 0.18), transparent 70%), radial-gradient(40% 50% at 90% 90%, rgba(122, 157, 224, 0.10), transparent 70%)',
         }}
       />
       <div className="relative w-full max-w-md rounded-[var(--radius-xl)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-7 shadow-[var(--shadow-elev-2)]">

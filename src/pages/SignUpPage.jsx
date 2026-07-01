@@ -65,7 +65,7 @@ export default function SignUpPage() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              'radial-gradient(50% 50% at 80% 10%, rgba(249, 115, 22, 0.14), transparent 70%), radial-gradient(40% 50% at 10% 90%, rgba(37, 99, 235, 0.10), transparent 70%)',
+              'radial-gradient(50% 50% at 80% 10%, rgba(224, 134, 97, 0.18), transparent 70%), radial-gradient(40% 50% at 10% 90%, rgba(122, 157, 224, 0.10), transparent 70%)',
           }}
         />
         <div className="relative w-full max-w-md rounded-[var(--radius-xl)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-7 shadow-[var(--shadow-elev-2)]">
