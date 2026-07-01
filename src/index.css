@@ -14,16 +14,16 @@
     'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
 
-  /* Light / editorial cream — the default */
-  --color-canvas: #f4ede1;
+  /* Light / editorial — clean white the default */
+  --color-canvas: #ffffff;
   --color-surface: #ffffff;
-  --color-surface-2: #eee5d5;
-  --color-surface-3: #e6dcc8;
-  --color-border: #e2d7c1;
-  --color-border-strong: #c9b995;
+  --color-surface-2: #f7f5f1;
+  --color-surface-3: #efece5;
+  --color-border: #ebe6dc;
+  --color-border-strong: #cfc7b6;
   --color-text: #1a1613;
   --color-text-muted: #4a4137;
-  --color-text-subtle: #7a6f60;
+  --color-text-subtle: #857c6f;
 
   /* Ink — the "black" persona card */
   --color-ink: #17130f;
@@ -252,4 +252,56 @@ input[type='range']::-moz-range-thumb {
   text-decoration-thickness: 1.5px;
   text-underline-offset: 4px;
   font-style: italic;
+}
+
+/* Marquee ticker (dark strip). We render content twice and shift by -50% for a seamless loop. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 42s linear infinite;
+  will-change: transform;
+}
+
+/* Tape label — small colored badge with rotated feel used on verified cards */
+.tape {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Rubber-stamp look for "100% HUMAN" */
+.stamp {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+  border-radius: 6px;
+  background: transparent;
+}
+
+/* Hand-written accent text (uses italic serif) */
+.handwritten {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-accent);
+  font-size: 15px;
+  line-height: 1.2;
 }
