@@ -8,8 +8,8 @@ function getInitial() {
     const saved = localStorage.getItem(STORAGE_KEYS.theme);
     if (saved === 'light' || saved === 'dark') return saved;
   } catch {}
-  // Dark by default — matches the Claude Code aesthetic. Users can flip via toggle.
-  return 'dark';
+  // Editorial cream is the default. Users can flip via toggle.
+  return 'light';
 }
 
 export function ThemeProvider({ children }) {
