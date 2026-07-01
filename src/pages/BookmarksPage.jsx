@@ -20,9 +20,12 @@ export default function BookmarksPage() {
     <>
       <SEO title="Bookmarks" description="The roles you've saved." />
       <div className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:px-6">
-        <header className="mb-6 flex flex-col gap-1">
-          <h1 className="text-[26px] font-semibold tracking-[-0.01em] text-[color:var(--color-text)] sm:text-[32px]">
-            Bookmarked roles
+        <header className="mb-8 flex flex-col gap-1">
+          <p className="text-[11.5px] font-medium uppercase tracking-[0.24em] text-[color:var(--color-accent)]">
+            Your library
+          </p>
+          <h1 className="font-display mt-2 text-[40px] font-medium leading-[1.02] tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[52px]">
+            Bookmarked <em className="italic">roles.</em>
           </h1>
           <p className="text-[14px] text-[color:var(--color-text-muted)]">
             {loading

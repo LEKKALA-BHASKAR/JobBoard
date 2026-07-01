@@ -21,14 +21,14 @@ export const WORKPLACE_TYPES = [
 ];
 
 export const CATEGORIES = [
-  { value: 'engineering', label: 'Engineering', accent: '#4f46e5' },
-  { value: 'design', label: 'Design', accent: '#db2777' },
-  { value: 'product', label: 'Product', accent: '#0891b2' },
-  { value: 'data', label: 'Data & ML', accent: '#7c3aed' },
-  { value: 'sales', label: 'Sales', accent: '#059669' },
-  { value: 'marketing', label: 'Marketing', accent: '#d97706' },
-  { value: 'operations', label: 'Operations', accent: '#475569' },
-  { value: 'support', label: 'Customer Success', accent: '#0ea5e9' },
+  { value: 'engineering', label: 'Engineering', accent: '#7a9de0' },
+  { value: 'design', label: 'Design', accent: '#e08661' },
+  { value: 'product', label: 'Product', accent: '#5b7fc4' },
+  { value: 'data', label: 'Data & ML', accent: '#b8ac9a' },
+  { value: 'sales', label: 'Sales', accent: '#eba07f' },
+  { value: 'marketing', label: 'Marketing', accent: '#e0a55c' },
+  { value: 'operations', label: 'Operations', accent: '#7a6f60' },
+  { value: 'support', label: 'Customer Success', accent: '#9ab5eb' },
 ];
 
 export const SORT_OPTIONS = [

@@ -100,13 +100,15 @@ export default function JobsPage() {
       />
 
       <div className="mx-auto max-w-6xl px-4 pt-8 pb-16 sm:px-6">
-        <header className="mb-6 flex flex-col gap-2">
-          <h1 className="text-[26px] font-semibold tracking-[-0.01em] text-[color:var(--color-text)] sm:text-[32px]">
-            Open roles
+        <header className="mb-8 flex flex-col gap-2">
+          <p className="text-[11.5px] font-medium uppercase tracking-[0.24em] text-[color:var(--color-accent)]">
+            Every open role
+          </p>
+          <h1 className="font-display text-[40px] font-medium leading-[1.02] tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[52px]">
+            Roles worth <em className="italic">reading twice.</em>
           </h1>
-          <p className="text-[14px] text-[color:var(--color-text-muted)]">
-            Search across every listing. Filters and sort update the URL — share the exact view
-            you’re looking at.
+          <p className="mt-1 max-w-xl text-[14px] leading-relaxed text-[color:var(--color-text-muted)]">
+            Search across every verified listing. Filters and sort update the URL — share the exact view you’re looking at.
           </p>
         </header>
 

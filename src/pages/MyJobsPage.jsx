@@ -24,10 +24,13 @@ export default function MyJobsPage() {
       <div className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:px-6">
         <header className="mb-6 flex flex-wrap items-end justify-between gap-3">
           <div>
-            <h1 className="text-[26px] font-semibold tracking-[-0.01em] text-[color:var(--color-text)] sm:text-[32px]">
-              My posted roles
+            <p className="text-[11.5px] font-medium uppercase tracking-[0.24em] text-[color:var(--color-accent)]">
+              Your listings
+            </p>
+            <h1 className="font-display mt-2 text-[40px] font-medium leading-[1.02] tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[52px]">
+              My posted <em className="italic">roles.</em>
             </h1>
-            <p className="mt-1 text-[14px] text-[color:var(--color-text-muted)]">
+            <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--color-text-muted)]">
               Listings you’ve published on Postline. Edit or delete from any listing page.
             </p>
           </div>

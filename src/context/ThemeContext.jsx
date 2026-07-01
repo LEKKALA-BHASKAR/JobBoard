@@ -8,9 +8,7 @@ function getInitial() {
     const saved = localStorage.getItem(STORAGE_KEYS.theme);
     if (saved === 'light' || saved === 'dark') return saved;
   } catch {}
-  if (typeof window !== 'undefined' && window.matchMedia) {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
+  // Editorial cream is the default. Users can flip via toggle.
   return 'light';
 }
 

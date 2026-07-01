@@ -3,9 +3,9 @@ import { cn } from '../utils/cn';
 
 const VARIANTS = {
   primary:
-    'bg-[color:var(--color-accent)] text-white hover:bg-[color:var(--color-accent-hover)] shadow-[var(--shadow-elev-1)]',
+    'bg-[color:var(--color-accent)] text-white hover:bg-[color:var(--color-accent-hover)] shadow-[var(--shadow-elev-2)] ring-1 ring-inset ring-white/10',
   secondary:
-    'bg-[color:var(--color-surface)] text-[color:var(--color-text)] border border-[color:var(--color-border)] hover:bg-[color:var(--color-surface-2)]',
+    'bg-[color:var(--color-surface)] text-[color:var(--color-text)] border border-[color:var(--color-border)] hover:bg-[color:var(--color-surface-2)] hover:border-[color:var(--color-border-strong)]',
   ghost:
     'bg-transparent text-[color:var(--color-text)] hover:bg-[color:var(--color-surface-3)]',
   danger:

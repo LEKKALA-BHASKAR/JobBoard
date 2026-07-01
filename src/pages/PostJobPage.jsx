@@ -44,16 +44,15 @@ export default function PostJobPage() {
         description="Publish a role to Postline in under a minute. Free while in beta."
       />
       <div className="mx-auto max-w-4xl px-4 pb-24 pt-10 sm:px-6">
-        <header className="mb-8 flex flex-col gap-1">
-          <span className="text-[12.5px] font-semibold uppercase tracking-wider text-[color:var(--color-accent-text)]">
+        <header className="mb-10 flex flex-col gap-1">
+          <span className="text-[11.5px] font-medium uppercase tracking-[0.24em] text-[color:var(--color-accent)]">
             Post a job
           </span>
-          <h1 className="text-[28px] font-semibold tracking-[-0.01em] text-[color:var(--color-text)] sm:text-[32px]">
-            Share a role with the community
+          <h1 className="font-display mt-2 text-[40px] font-medium leading-[1.02] tracking-[-0.02em] text-[color:var(--color-text)] sm:text-[52px]">
+            Share a role with the <em className="italic">community.</em>
           </h1>
-          <p className="max-w-xl text-[14px] text-[color:var(--color-text-muted)]">
-            Your listing goes live instantly. Everything is stored locally in this demo — you
-            can edit or delete anytime from the role page.
+          <p className="mt-3 max-w-xl text-[14px] leading-relaxed text-[color:var(--color-text-muted)]">
+            Your listing goes live instantly. Everything is stored locally in this demo — you can edit or delete anytime from the role page.
           </p>
         </header>
 
